@@ -1,47 +1,24 @@
-# max-preview.yazi
+> [!WARNING]
+> The plugin system is still in the early stage, and most of the plugins below only guarantee compatibility with the latest code of Yazi!
+>
+> Please make sure that both your Yazi and plugins are on the `HEAD` to ensure proper functionality!
 
-Maximize or restore the preview pane.
+# Plugins
 
-https://github.com/yazi-rs/plugins/assets/17523360/8976308e-ebfe-4e9e-babe-153eb1f87d61
+The following plugins can be installed using the [`ya pack` package manager](https://yazi-rs.github.io/docs/cli#package-manager) introduced in Yazi v0.3.
 
-## Installation
+For specific installation commands and configuration instructions, check the individual `README.md` of each plugin by clicking the link below:
 
-```sh
-ya pack -a yazi-rs/plugins:max-preview
-```
-
-## Usage
-
-Add this to your `~/.config/yazi/keymap.toml`:
-
-```toml
-[[manager.prepend_keymap]]
-on   = "T"
-run  = "plugin max-preview"
-desc = "Maximize or restore preview"
-```
-
-Make sure the <kbd>T</kbd> key is not used elsewhere.
-
-## Tips
-
-This plugin only maximizes the "available preview area", without actually changing the content size.
-
-This means that the appearance of your preview largely depends on the previewer you are using.
-However, most previewers tend to make the most of the available space, so this usually isn't an issue.
-
-For image previews, you may want to tune up the [`max_width`][max-width] and [`max_height`][max-height] options in your `yazi.toml`:
-
-```toml
-[preview]
-# Change them to your desired values
-max_width  = 1000
-max_height = 1000
-```
-
-[max-width]: https://yazi-rs.github.io/docs/configuration/yazi/#preview.max_width
-[max-height]: https://yazi-rs.github.io/docs/configuration/yazi/#preview.max_height
-
-## License
-
-This plugin is MIT-licensed. For more information check the [LICENSE](LICENSE) file.
+- [smart-enter.yazi](smart-enter.yazi) - `Open` files or `enter` directories all in one key!
+- [full-border.yazi](full-border.yazi) - Add a full border to Yazi to make it look fancier.
+- [max-preview.yazi](max-preview.yazi) - Maximize or restore the preview pane.
+- [hide-preview.yazi](hide-preview.yazi) - Switch the preview pane between hidden and shown.
+- [jump-to-char.yazi](jump-to-char.yazi) - Vim-like `f<char>`, jump to the next file whose name starts with `<char>`.
+- [git.yazi](git.yazi) - Show the status of Git file changes as linemode in the file list.
+- [mount.yazi](mount.yazi) - A mount manager for Yazi, providing disk mount, unmount, and eject functionality.
+- [smart-filter.yazi](smart-filter.yazi) - Makes filters smarter: continuous filtering, automatically enter unique directory, open file on submitting.
+- [chmod.yazi](chmod.yazi) - Execute `chmod` on the selected files to change their mode.
+- [mime-ext.yazi](mime-ext.yazi) - A mime-type provider based on a file extension database, replacing the builtin `file(1)` to speed up mime-type retrieval at the expense of accuracy.
+- [diff.yazi](diff.yazi) - Diff the selected file with the hovered file, create a living patch, and copy it to the clipboard.
+- [no-status.yazi](no-status.yazi) - Remove the status bar.
+- [mactag.yazi](mactag.yazi) - Bring macOS's awesome tagging feature to Yazi! The plugin is only available for macOS just like the name says.
